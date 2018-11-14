@@ -10,6 +10,10 @@ buildscript {
 	}
 }
 
+plugins {
+    id 'org.sonarqube' version '2.6.2'
+}
+
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
@@ -39,4 +43,11 @@ jacocoTestCoverageVerification {
 			}
 		}
 	}
+}
+
+sonarqube {
+    properties {
+        property 'sonar.host.url','http://localhost:9500'
+        property 'sonar.login','cd6634cc8ff53412e3bb8c044ae19f25a45d91e5'
+    }
 }
