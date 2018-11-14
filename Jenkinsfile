@@ -22,5 +22,11 @@ pipeline {
                 bat "sh ./gradlew jacocoTestCoverageVerification"
             }
           }
+
+          stage("Sonarqube analysis") {
+            steps{
+              bat "./gradlew --info sonarqube"
+            }
+          }
      }
 }
